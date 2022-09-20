@@ -1,0 +1,35 @@
+{
+  "canisters": {
+    "microblg_backend": {
+      "main": "src/microblg_backend/main.mo",
+      "type": "motoko"
+    },
+    "microblg_frontend": {
+      "dependencies": [
+        "microblg_backend"
+      ],
+      "frontend": {
+        "entrypoint": "src/microblg_frontend/src/index.html"
+      },
+      "source": [
+        "src/microblg_frontend/assets",
+        "dist/microblg_frontend/"
+      ],
+      "type": "assets"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "dfx": "0.11.2",
+  "networks": {
+    "local": {
+      "bind": "127.0.0.1:8000",
+      "type": "ephemeral"
+    }
+  },
+  "version": 1
+}
